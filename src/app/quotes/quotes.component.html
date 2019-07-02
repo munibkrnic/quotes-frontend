@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-6 col-sm-12 col-lg-6">  <!-- ovaj div zauzima 6 colona ako je u pitanju ekran medium velicine(md)-->
+
+    <app-quotes-table [quotes] = 'quotes'> </app-quotes-table> <!-- kreiraj app komponentu i proslijedi niz pod imenom quotes-->
+
+  </div >
+
+
+
+ <div class="col-md-6 col-sm-12 col-lg-6"> <!-- oovo sm je za male ekrane a lg je za velike ekrane a ima i xs za malene skroz-->
+
+     <app-quotes-single [quote]= 'selectedQuote'[isViewMode] = 'true'></app-quotes-single>
+ 
+ </div>
+
+
+</div>

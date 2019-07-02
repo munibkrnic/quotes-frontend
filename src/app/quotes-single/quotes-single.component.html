@@ -1,0 +1,49 @@
+<div>
+<div class="form-group" *ngIf = 'isViewMode'>
+  <label> ID</label>
+  <input type="text" class="form-control" name="quoteID"
+  disabled [(ngModel)]='quote.id' />
+</div>
+
+<div class="form-group">
+    <label> QuoteBy </label>
+    <input type="text" class="form-control" name="quoteBy"
+    [disabled] = 'isViewMode' [(ngModel)]='quote.quoteBy' />
+</div>
+
+<div class="form-group">
+    <label> QuoteText </label>
+    <textarea type="text" class="form-control" name="quoteText"
+    [(ngModel)]='quote.quoteText' [disabled] = 'isViewMode'> </textarea>
+
+</div>
+
+<div class="form-group" *ngIf = 'isViewMode'>
+    <label> QuoteDate </label>
+    <input type="text" class="form-control" name="quoteDate"
+    disabled [(ngModel)]='quote.quoteDate' />
+</div>
+
+<div class="form-group" *ngIf='isViewMode && quote.imagePath'>
+    <img src = '{{apiUrl}}/uploads/{{quote.imagePath}}'/>
+
+
+</div>
+
+<div class ="form-group" *ngIf = '!isViewMode'>
+<label> Slika </label>
+<input type="file" name="img"
+     ng2FileSelect
+     [uploader]='uploader'/>
+</div>
+
+<div class="form-group" *ngIf = '!isViewMode'>
+    <button class="btn btn-primary" (click) = 'insertQuote()'>  <!-- ako umjesto primary stavimo success onda je umjesto plave boje imamo zelenu itd... -->
+        Unesi
+    </button>
+
+
+</div>
+
+
+</div>

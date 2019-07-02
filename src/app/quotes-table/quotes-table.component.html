@@ -1,0 +1,32 @@
+<div>
+  <h1>
+    {{title}} <!--idi u moju kompponentu i trazi properti title, pomocu viticastih povezujemo html sa tajskript fajlom-->
+
+  </h1>
+<input type="text" [(ngModel)]='title' />  <!-- ako su samo [ngModel] ovdje ne mijenja na displeju, [( kada su sve zagrade onda imamo i promjenu na ekranu )]-->
+ 
+<table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <td>QuoteBy</td>
+        <th>QuoteText</th>
+     </tr>
+   </thead>
+<tbody>
+<!-- ovdje mozemo na dinamicki nacin da pretvorimo ove objekte u html -->
+<tr *ngFor = 'let quote of quotes' (click)='rowClick(quote)'>  <!-- ovo let je neka varijanta for each petlje, tacnije da predjemo kroz svaki element -->
+  <td>{{quote.id}}</td>
+  <td>{{quote.quoteBy}}</td> <!-- viticaste zagrade znace da ce biti da se umece vrijednost dinamicki-->
+  <td>{{quote.quoteText}}</td>
+  
+
+
+</tr>
+
+</tbody>
+
+  </table>
+
+
+</div>

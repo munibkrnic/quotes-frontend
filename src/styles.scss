@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+.margin-top-5pct {
+    margin-top: 5% !important;  /* important je da ovom pravilu damo prednost da bi bilo izvrseno jer nekada neka komanda ima vecu prednost od date komande*/
+}
